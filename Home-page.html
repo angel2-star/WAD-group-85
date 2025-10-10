@@ -1,69 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-</head>  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>University Timetable Manager | Home</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>University Timetable Manager | Home</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <header>
-    <h1>University Timetable Manager</h1>
-    <nav>
-      <a href="Home-page.html">Home</a>
-      <a href="login.html">Login</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+  <header>
+    <h1><a href="Home-page.html" class="site-title-link">University Timetable Manager</a></h1>
+    <nav>
+      <a href="Home-page.html">Home</a>
+      <a href="Login.html">Login</a>
+    </nav>
+  </header>
 
-  <section class="hero">
-    <h2>Manage Your Academic Schedule Efficiently</h2>
-    <p>A dynamic web-based timetable system for students and lecturers. View, update, and access timetables in real-time — anytime, anywhere.</p>
-    <div class="login-buttons">
-      <a href="student-login.html">Student Login</a>
-      <a href="admin-login.html">Admin Login</a>
-    </div>
-  </section>
+  <section class="hero">
+    <h2>Manage Your Academic Schedule Efficiently</h2>
+    <p>A dynamic web-based timetable system for students and lecturers. View, update, and access timetables in real-time — anytime, anywhere.</p>
+    <div class="login-buttons">
+      <a href="Login.html?type=student" class="student-login-btn">Student Login</a>
+      <a href="Login.html?type=admin" class="admin-login-btn">Admin Login</a>
+    </div>
+  </section>
 
-  <section class="features-section">
-    <h2>Key Features</h2>
+  <section class="features-section">
+    <h2>Key Features</h2>
 
-    <div class="feature-item active">
-      <h3>Real-Time Updates</h3>
-      <p>Access live timetable updates instantly from any device.</p>
-    </div>
+    <div class="feature-item active">
+      <h3>Real-Time Updates</h3>
+      <p>Access live timetable updates instantly from any device.</p>
+    </div>
 
-    <div class="feature-item">
-      <h3>Admin Control</h3>
-      <p>Lecturers and admins can add, update, and delete class schedules.</p>
-    </div>
+    <div class="feature-item">
+      <h3>Admin Control</h3>
+      <p>Lecturers and admins can add, update, and delete class schedules.</p>
+    </div>
 
-    <div class="feature-item">
-      <h3>Search & Filter</h3>
-      <p>Find schedules quickly by module, lecturer, or course.</p>
-    </div>
+    <div class="feature-item">
+      <h3>Search & Filter</h3>
+      <p>Find schedules quickly by module, lecturer, or course.</p>
+    </div>
 
-    <div class="feature-item">
-      <h3>Mobile Friendly</h3>
-      <p>Responsive design ensures easy viewing on phones and tablets.</p>
-    </div>
+    <div class="feature-item">
+      <h3>Mobile Friendly</h3>
+      <p>Responsive design ensures easy viewing on phones and tablets.</p>
+    </div>
 
-    <div class="dots">
-      <span class="dot active" data-index="0"></span>
-      <span class="dot" data-index="1"></span>
-      <span class="dot" data-index="2"></span>
-      <span class="dot" data-index="3"></span>
-    </div>
-  </section>
+    <div class="dots">
+      <span class="dot active" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+      <span class="dot" data-index="2"></span>
+      <span class="dot" data-index="3"></span>
+    </div>
+  </section>
 
-  <footer>
-    <p>&copy; 2025 University Timetable Manager | Group 85 | WAD621S Project</p>
-  </footer>
+  <section class="about-section">
+    <h2>About University Timetable Manager</h2>
+    <p>University Timetable Manager is a web-based application designed to streamline the management of academic schedules for students and lecturers. Our platform offers real-time updates, easy access to timetables, and robust admin controls to ensure that everyone stays informed and organized.</p>
+    </section>
 
-  <script src="Home page.js" defer></script>
+    <section class="contact-section">
+    <h2>Contact Us</h2>
+    <p>Location: 123 University Steet, Windhoek, Namibia</p>
+    <p>Email: <a href="mailto:support@universitytimetablemanager.com">support@universitytimetablemanager.com</a></p>
+    <p>Phone: +264 (061) 123-4567</p>
+    </section>
+
+  <footer>
+    <p>&copy; 2025 University Timetable Manager | Group 85 | WAD621S Project</p>
+  </footer>
+
+  <script src="home-page.js" defer></script>
 
 </body>
 </html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login | University Timetable Manager</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="Login-styles.css" />
+</head>
+<body>
+
+  <header>
+    <h1><a href="Home-page.html" class="site-title-link">University Timetable Manager</a></h1>
+    <nav>
+      <a href="Home-page.html">Home</a>
+    </nav>
+  </header>
+
+  <main class="login-container">
+    <h1>Login</h1>
+    <div class="toggle-buttons">
+      <button id="student-btn" class="active">Student</button>
+      <button id="admin-btn">Admin</button>
+    </div>
+
+    <form id="login-form" action="student-login.php" method="POST">
+      <label id="user-label" for="user-input">Student ID:</label>
+      <input type="text" id="user-input" name="student_id" placeholder="Enter your student ID" required />
+
+      <label id="pass-label" for="pass-input">Password:</label>
+      <input type="password" id="pass-input" name="password" placeholder="Enter your password" required />
+
+      <button type="submit" class="submit-btn">Log In</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 University Timetable Manager | Group 85 | WAD621S Project</p>
+  </footer>
+
+  <script src="login-scripts.js" defer></script>
+
+</body>
+</html>
