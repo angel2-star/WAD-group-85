@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #003366;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.5rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                  url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b') center/cover;
+  color: white;
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.login-buttons a {
+  background: #ffcc00;
+  color: #003366;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
+  min-width: 150px;
+  text-align: center;
+}
+
+.login-buttons a:hover {
+  background: #ffdb4d;
+}
+
+/* Key Features Rotator Section */
+.features-section {
+  background: white;
+  margin: 3rem auto;
+  padding: 3rem 2rem;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.features-section h2 {
+  color: #003366;
+  margin-bottom: 2rem;
+}
+
+.feature-item {
+  display: none;
+  animation: fade 1s ease-in-out;
+}
+
+.feature-item.active {
+  display: block;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.feature-item h3 {
+  color: #003366;
+  margin-bottom: 0.5rem;
+}
+
+.dots {
+  margin-top: 1.5rem;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #003366;
+}
+
+footer {
+  background: #003366;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+@media(max-width: 768px) {
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .login-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
