@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard | University Timetable Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dashboard-style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="Home-page.html" class="site-title-link">University Timetable Manager</a></h1>
+    <nav>
+      <a href="Home-page.html">Home</a>
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="About.html">About</a>
+      <a href="Contact.html">Contact</a>
+      <span class="user-welcome">Welcome, <span id="username">Student</span>!</span>
+      <a href="login.html" class="logout-btn">Logout</a>
+    </nav>
+  </header>
+
+  <main class="dashboard-container">
+    <!-- User Role Toggle -->
+    <div class="role-toggle">
+      <button id="student-role-btn" class="role-btn active">Student View</button>
+      <button id="admin-role-btn" class="role-btn">Admin View</button>
+    </div>
+
+    <!-- Dashboard Header -->
+    <div class="dashboard-header">
+      <h2 id="dashboard-title">Student Dashboard</h2>
+      <div class="dashboard-actions">
+        <button class="action-btn" id="refresh-btn">↻ Refresh</button>
+        <button class="action-btn" id="export-btn">📥 Export</button>
+      </div>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon">📚</div>
+        <div class="stat-info">
+          <h3 id="today-classes">0</h3>
+          <p>Today's Classes</p>
+        </div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-icon">📅</div>
+        <div class="stat-info">
+          <h3 id="week-classes">0</h3>
+          <p>This Week</p>
+        </div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-icon">⏰</div>
+        <div class="stat-info">
+          <h3 id="next-class">--:--</h3>
+          <p>Next Class</p>
+        </div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-icon">🔔</div>
+        <div class="stat-info">
+          <h3 id="notification-count">0</h3>
+          <p>Notifications</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content Grid -->
+    <div class="dashboard-grid">
+      <!-- Left Column -->
+      <div class="left-column">
+        <!-- Upcoming Classes -->
+        <section class="dashboard-section">
+          <div class="section-header">
+            <h3>📋 Upcoming Classes</h3>
+            <button class="section-action" id="view-all-classes">View All</button>
+          </div>
+          <div class="classes-list" id="upcoming-classes">
+            <div class="loading-text">Loading classes...</div>
+          </div>
+        </section>
+
+        <!-- Weekly Timetable -->
+        <section class="dashboard-section">
+          <div class="section-header">
+            <h3>📅 Weekly Overview</h3>
+          </div>
+          <div class="timetable-preview">
+            <p><strong>Monday:</strong> WAD62IS (10:00), MAT101 (14:00)</p>
+            <p><strong>Tuesday:</strong> FAC102 (09:00)</p>
+            <p><strong>Wednesday:</strong> WAD62IS (10:00), CSE201 (16:00)</p>
+            <p><strong>Thursday:</strong> No classes</p>
+            <p><strong>Friday:</strong> MAT101 (10:00)</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- Right Column -->
+      <div class="right-column">
+        <!-- Notifications -->
+        <section class="dashboard-section">
+          <div class="section-header">
+            <h3>🔔 Notifications</h3>
+            <button class="section-action" id="clear-notifications">Clear All</button>
+          </div>
+          <div class="notifications-list" id="notifications-container">
+            <div class="loading-text">Loading notifications...</div>
+          </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="dashboard-section">
+          <div class="section-header">
+            <h3>⚡ Quick Actions</h3>
+          </div>
+          <div class="quick-actions">
+            <button class="quick-action-btn" id="search-classes">
+              🔍 Search Classes
+            </button>
+            <button class="quick-action-btn" id="print-timetable">
+              🖨️ Print Timetable
+            </button>
+            <button class="quick-action-btn" id="view-profile">
+              👤 My Profile
+            </button>
+          </div>
+        </section>
+
+        <!-- Admin Panel (Hidden by default) -->
+        <section class="dashboard-section admin-panel" id="admin-panel" style="display: none;">
+          <div class="section-header">
+            <h3>👥 Admin Tools</h3>
+          </div>
+          <div class="quick-actions">
+            <button class="quick-action-btn" id="manage-courses">
+              📝 Manage Courses
+            </button>
+            <button class="quick-action-btn" id="add-schedule">
+              ➕ Add Schedule
+            </button>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 University Timetable Manager | Group 85 | WAD621S Project</p>
+  </footer>
+
+  <script src="dashboard-script.js"></script>
+</body>
+</html>
