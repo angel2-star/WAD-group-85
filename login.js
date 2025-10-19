@@ -1,106 +1,58 @@
-const card = document.getElementById('card');
-const toSignup = document.getElementById('toSignup');
-const toLogin = document.getElementById('toLogin');
-const loginForm = document.getElementById('loginForm');
-const signupForm = document.getElementById('signupForm');
-const forgotLink = document.getElementById('forgotLink');
+document.addEventListener('DOMContentLoaded', () => {
+    const card = document.getElementById('card');
+    const toSignup = document.getElementById('toSignup');
+    const toLogin = document.getElementById('toLogin');
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
 
+    if (!card || !toSignup || !toLogin || !loginForm || !signupForm) {
+        console.error('Login page elements missing:', { card, toSignup, toLogin, loginForm, signupForm });
+        alert('Error: Login page setup failed. Please check console for details.');
+        return;
+    }
 
-toSignup.addEventListener('click', () => {
-  card.classList.add('flipped');
-});
+    toSignup.addEventListener('click', () => {
+        card.classList.add('flip');
+    });
 
-toLogin.addEventListener('click', () => {
-  card.classList.remove('flipped');
-});
+    toLogin.addEventListener('click', () => {
+        card.classList.remove('flip');
+    });
 
+    loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const role = document.getElementById('loginRole').value;
+        const email = document.getElementById('loginEmail').value;
+        const password = document.getElementById('loginPassword').value;
 
-const users = {};
+        if (!role || !email || !password) {
+            alert('Please fill in all fields.');
+            return;
+        }
 
+        // Simulate login (replace with actual authentication)
+        localStorage.setItem('userRole', role);
+        window.location.href = role === 'admin' ? 'admin-dashboard.html' : 'dashboard.html';
+    });
 
-//signupForm.addEventListener('submit', (e) => {
- // e.preventDefault();
- /* 
-  const role = document.getElementById('signupRole').value;
-  const name = document.getElementById('signupName').value;
-  const email = document.getElementById('signupEmail').value;
-  const password = document.getElementById('signupPassword').value;
-  const errorMsg = document.getElementById('signupError');
-  const successMsg = document.getElementById('signupSuccess');
+    signupForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const role = document.getElementById('signupRole').value;
+        const name = document.getElementById('signupName').value;
+        const email = document.getElementById('signupEmail').value;
+        const password = document.getElementById('signupPassword').value;
 
+        if (!role || !name || !email || !password) {
+            alert('Please fill in all fields.');
+            return;
+        }
 
-  errorMsg.style.display = 'none';
-  successMsg.style.display = 'none';
+        // Simulate signup (replace with actual registration)
+        localStorage.setItem('userRole', role);
+        window.location.href = role === 'admin' ? 'admin-dashboard.html' : 'dashboard.html';
+    });
 
-  if (users[email]) {
-    errorMsg.textContent = 'User already exists with this email';
-    errorMsg.style.display = 'block';
-    return;
-  }
-
- 
-  users[email] = {
-    name: name,
-    password: password,
-    role: role
-  };
-
-  successMsg.textContent = 'Account created successfully! Please login.';
-  successMsg.style.display = 'block';
-
-  
-  signupForm.reset();
-
-
-  setTimeout(() => {
-    card.classList.remove('flipped');
-    successMsg.style.display = 'none';
-  }, 1500);*/
-//});
-
-
-//loginForm.addEventListener('submit', (e) => {
-  //e.preventDefault();
-  
-  /*const role = document.getElementById('loginRole').value;
-  const email = document.getElementById('loginEmail').value;
-  const password = document.getElementById('loginPassword').value;
-  const errorMsg = document.getElementById('loginError');
-
-  
-  errorMsg.style.display = 'none';
-
-  
-  if (!users[email]) {
-    errorMsg.textContent = 'User not found. Please sign up first.';
-    errorMsg.style.display = 'block';
-    return;
-  }
-
-  
-  if (users[email].password !== password) {
-    errorMsg.textContent = 'Incorrect password';
-    errorMsg.style.display = 'block';
-    return;
-  }
-
-  
-  if (users[email].role !== role) {
-    errorMsg.textContent = 'Role mismatch. Please select the correct role.';
-    errorMsg.style.display = 'block';
-    return;
-  }
-
-  if (role === 'lecturer') {
-   
-    window.location.href = 'lecturer-dashboard.html';
-  } else if (role === 'student') {
-    
-    window.location.href = 'student-dashboard.html';
-  }*/
-//});
-
-
-forgotLink.addEventListener('click', () => {
-  alert('Password reset functionality would be implemented here. For demo purposes, please contact admin.');
+    document.getElementById('forgotLink').addEventListener('click', () => {
+        alert('Forgot Password functionality is not implemented yet.');
+    });
 });
