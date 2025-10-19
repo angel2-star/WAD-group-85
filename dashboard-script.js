@@ -391,3 +391,58 @@ function showNotification(message, type = 'info') {
     
     return notification;
 }
+
+// Update dashboard based on user role
+function updateUserInfo() {
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (user) {
+        document.getElementById('username').textContent = user.username;
+        
+        // Show/hide admin features based on role
+        if (user.user_type === 'admin') {
+            document.getElementById('admin-panel').style.display = 'block';
+            document.getElementById('dashboard-title').textContent = 'Admin Dashboard';
+        } else {
+            document.getElementById('admin-panel').style.display = 'none';
+            document.getElementById('dashboard-title').textContent = 'Student Dashboard';
+        }
+    }
+}
+
+// Add this function back to your dashboard-script.js
+function printTimetable() {
+    console.log('Printing timetable...');
+    
+    // Store current view
+    const originalView = currentView;
+    
+    // Switch to weekly view for printing (better layout)
+    if (currentView === 'daily') {
+        toggleView('weekly');
+    }
+    
+    // Wait a moment for the view to switch, then print
+    setTimeout(() => {
+        window.print();
+        
+        // Switch back to original view after print dialog closes
+        setTimeout(() => {
+            if (originalView === 'daily') {
+                toggleView('daily');
+            }
+        }, 500);
+        
+    }, 100);
+}
+
+
+function setupEventListeners() {
+   
+    // Print timetable button
+    const printBtn = document.getElementById('print-timetable');
+    if (printBtn) {
+        printBtn.addEventListener('click', printTimetable);
+    }
+    
+    
+}
